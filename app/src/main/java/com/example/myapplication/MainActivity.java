@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         String messageText= smsEdit.getText().toString();
         Intent sms=new Intent(Intent.ACTION_SENDTO, Uri.parse(toSms));
 
-
+//
 
         sms.putExtra("sms_body", messageText);
         startActivity(sms);
