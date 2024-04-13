@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 if(!TextUtils.isEmpty(phoneNo))
                 {
                     String dial = "tel:" + phoneNo;
-                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+                    startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
                 }
                 else {
                     Toast.makeText(MainActivity.this, "Введите номер телефона", Toast.LENGTH_SHORT).show();
@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
         String toSms="smsto:" + mPhoneNoEt.getText().toString();
         String messageText= smsEdit.getText().toString();
         Intent sms=new Intent(Intent.ACTION_SENDTO, Uri.parse(toSms));
-
-//
 
         sms.putExtra("sms_body", messageText);
         startActivity(sms);
